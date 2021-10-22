@@ -1,11 +1,11 @@
-var pages=["Home","About","Interact","counter"];
+var pages=["Home","About","Interact"];
 function createNav() {
     var nav = document.createElement("nav");
     createButton(pages[0]);
     createButton(pages[1]);
     createButton(pages[2]);
     nav.style.backgroundColor = "red";
-    
+
     document.body.appendChild(nav);
     function createButton(pg) {
         var butt = document.createElement("button");
@@ -32,7 +32,7 @@ function navigate(pg) {
     } else if(pg==="About") {
         aboutPage()
     }
-    else {
+    else{
         interactpage()
     }
 }
@@ -65,14 +65,16 @@ function interactpage() {
         wrapper.innerHTML = "";
         var header = document.createElement("h1");
         header.innerHTML = "Interact";
-        var counts=0;
+        var increase=["Increase Counter"]
+        var counts=-1;
         var count = document.createElement("button");
-        var wrapper2 = document.createElement("div");
+        count.innerHTML=increase;
+    var wrapper2 = document.createElement("div");
         wrapper2.classList.add("wrapper2");
         document.body.appendChild(wrapper2);
         function counter() {
           counts++;
-        wrapper2.innerHTML = counts;
+        wrapper2.innerHTML = "counter: "+counts;
 }
         count.addEventListener("click",function (){
             counter()
